@@ -15,16 +15,16 @@ array_y_1 = [];
 array_y_2 = [];
 array_x = [];
 
-while x <= b + h
+while x <= b - 3*h
     
 %     k_1 = h * myfunction2(0, [y_1, y_2]);
 %     k_2 = h * myfunction2(0, [ [y_1 + 0.5 * h; y_1 + 0.5 * h], y_2 + 0.5 * h * k_1]);
 %     k_3 = h * myfunction2(0, [ [y_1 + 0.5 * h; y_1 + 0.5 * h], y_2 + 0.5 * h * k_2]);
 %     k_4 = h * myfunction2(0, [ [y_1 + h; y_1 + h], y_2 + h * k_3]);
     k_1 = h * myfunction2(0, y);
-    k_2 = h * myfunction2(0, [ y + 0.5 * h, y + 0.5 * h * k_1]);
-    k_3 = h * myfunction2(0, [ y + 0.5 * h, y + 0.5 * h * k_2]);
-    k_4 = h * myfunction2(0, [ y + 0.5 * h, y + h * k_3]);
+    k_2 = h * myfunction2(0, y + 0.5 * h * k_1); %[ y + 0.5 * h,
+    k_3 = h * myfunction2(0, y + 0.5 * h * k_2); %[ y + 0.5 * h, 
+    k_4 = h * myfunction2(0, y + h * k_3); %[ y + 0.5 * h, 
     
     y_new = y + 1/6 * (k_1 + 2 * k_2 + 2 * k_3 + k_4);
     y_1 = y_new(1);
