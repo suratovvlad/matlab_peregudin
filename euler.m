@@ -9,7 +9,7 @@ x = a;
 array_y_1 = [];
 array_y_2 = [];
 array_x = [];
-while x <= b + h
+while x < b
     
     myfunc = myfunction(x, [y_1, y_2]);
     
